@@ -10,7 +10,9 @@ from shot import Shot
 
 def main():
     pygame.init()
+    
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    bg_image = pygame.image.load('./assets/background.jpg')
 
     clock = pygame.time.Clock()
     dt = 0.0
@@ -38,7 +40,7 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        screen.fill("black")
+        screen.blit(bg_image, (0, 0))
 
         updatable.update(dt)
 
